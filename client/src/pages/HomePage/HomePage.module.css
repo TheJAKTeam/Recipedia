@@ -1,0 +1,10 @@
+.homeSection {
+  margin: 1rem auto 2rem;
+}
+
+.recipes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
