@@ -1,0 +1,23 @@
+.description {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.preferenceSection {
+  max-width: 600px;
+  margin: 2rem auto 3rem;
+}
+
+.preferenceSection label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.preferenceSection input {
+  margin-bottom: 0;
+}
+
+.preferenceSection button {
+  margin-top: 0.75rem;
+}

@@ -1,37 +1,47 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
-import style from "./HomePage.module.css";
+import homeStyle from "./HomePage.module.css";
+import recipeBrowserStyle from "../../commonStyles/RecipeBrowser.module.css";
 
 const HomePage = () => {
+  const history = useHistory();
   const { register, handleSubmit } = useForm();
 
   const [recipes, setRecipes] = useState([]);
+  const [recipesLoaded, setRecipesLoaded] = useState(false);
 
   useEffect(() => {
-    const getData = async () => {
+    const getFeaturedRecipes = async () => {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_DOMAIN}/api/recipes`
+        `${process.env.REACT_APP_BACKEND_DOMAIN}/api/recipes`,
+        {
+          credentials: "include",
+        }
       );
 
       setRecipes(await response.json());
+      setRecipesLoaded(true);
     };
 
-    getData();
+    getFeaturedRecipes();
   }, []);
 
   const searchRecipes = (data) => {
-    console.log(data);
+    history.push(`/search?query=${data.query}`);
   };
 
   return (
     <div>
-      <section className={style.homeSection}>
+      <h1>Welcome to Recipedia!</h1>
+
+      <section className={homeStyle.homeSection}>
         <h2>Search Recipes</h2>
         <form onSubmit={handleSubmit(searchRecipes)}>
           <input
-            className={"form-control"}
+            className="form-control"
             placeholder="What's cooking?"
             {...register("query")}
             required
@@ -39,18 +49,26 @@ const HomePage = () => {
         </form>
       </section>
 
-      <section className={style.homeSection}>
+      <section className={homeStyle.homeSection}>
         <h2>Featured Recipes</h2>
-        <div className={style.recipes}>
-          {recipes.map((recipe) => (
-            <RecipeCard
-              title={recipe.label}
-              image={recipe.image}
-              source={recipe.source}
-              url={recipe.url}
-            />
-          ))}
-        </div>
+        {recipesLoaded ? (
+          <div className={recipeBrowserStyle.recipes}>
+            {recipes.map((recipe) => (
+              <RecipeCard
+                id={recipe.uri}
+                title={recipe.label}
+                image={recipe.image}
+                source={recipe.source}
+                url={recipe.url}
+                context="browser"
+                recipes={recipes}
+                setRecipes={setRecipes}
+              />
+            ))}
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
       </section>
     </div>
   );

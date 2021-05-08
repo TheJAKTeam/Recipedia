@@ -1,0 +1,9 @@
+.pageButtons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.pageButtons button {
+  margin: 0 0.5rem;
+}

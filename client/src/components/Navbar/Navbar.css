@@ -1,0 +1,10 @@
+nav {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  button.logOutButton {
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+  }
+}
