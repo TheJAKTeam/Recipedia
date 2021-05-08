@@ -8,7 +8,8 @@ const path = require("path");
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const LocalStrategy = require("passport-local").Strategy;
-const FileStore = require("session-file-store")(session);
+const pgSession = require("connect-pg-simple")(session);
+const sessionPool = require("pg").Pool;
 
 const app = express();
 const PORT = process.env.PORT;
@@ -16,14 +17,31 @@ const db = require("./models");
 const { User } = db;
 
 // Initialize middleware
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: process.env.FRONTEND_DOMAIN,
+  })
+);
+
+const sessionDBaccess = new sessionPool({
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABASE,
+});
+
 app.use(
   session({
     key: "session",
     secret: process.env.AUTH_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: new FileStore(),
+    store: new pgSession({
+      pool: sessionDBaccess,
+      tableName: "sessions",
+    }),
   })
 );
 app.use(passport.initialize());
