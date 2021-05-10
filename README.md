@@ -1,45 +1,29 @@
 # Recipedia
 
 Recipedia is an application for finding recipes tailored to a user's specific preferences. It uses the Edamam API for searching for recipes and allows users to save them on Recipedia for later reference.
+
 Based on the CUNY Tech Prep Project Starter, a starter repo for building CUNY Tech Prep projects with React, Express.js, and Sequelize.js.
 
 ## Stack
 
 _API_
 
-- express.js
-- sequelize.js
+- Node.js
+- Express
+- Sequelize ORM
+- PostgreSQL
+- Passport.js + Bcrypt
 
 _React client_
 
-- Built using `create-react-app` and configured to work with the api.
+- Built using React with `create-react-app` and configured to work with the api.
 - Bootstrap 4.x added to `/client/public/index.html`
 - React Router
+- CSS and CSS Modules
 
-## Dev Setup
+### Configuration
 
-Each team member will need to do this on their local machine.
-
-### Create a postgres db
-
-Create a user in postgres named `ctp_user` with the password `ctp_pass`:
-
-> This only needs to be done one time on your machine
-> You can create additional users if you want to.
-
-```
-createuser -P -s -e ctp_user
-```
-
-Create a separate db for this project:
-
-```
-createdb -h localhost -U ctp_user app2019_development
-```
-
-> You will create a DB for each project you start based on this repo. For other projects change `app2019_development` to the new apps database name.
-
-_For more details see this [installing postgres guide](https://github.com/CUNYTechPrep/ctp2019/blob/master/guides/installing-postgresql.md)_
+Before running the application, you will need to configure various credentails and details. In the project root and `client/` directory, copy the `.env.example` file to `.env` and adjust them to your preferences. You will also need to configure the PostgreSQL database settings at `api/config/config.json`.
 
 ### Running the app
 
@@ -49,7 +33,6 @@ _Clone_ this app, then:
 
 ```bash
 # api-backend terminal 1
-cp .env.example .env
 npm install
 npm run dev
 ```
@@ -61,8 +44,8 @@ npm install
 npm start
 ```
 
-- api-backend will launch at: http://localhost:8080
-- react-client will launch at: http://localhost:3000
+- api-backend will launch at: http://localhost:8080 by default
+- react-client will launch at: http://localhost:3000 by default
 
 > In production you will only deploy a single app. The react client will build into static files that will be served from the backend.
 
