@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 
 import { isUserLoggedIn } from "../../util/auth";
 import "./Navbar.css";
+import logo from './logo.png'
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container d-flex">
         <Link className="navbar-brand" to="/">
-          Recipedia
+          <img src={logo} alt="recipedia logo" />
         </Link>
 
         <button
@@ -27,7 +28,7 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                Home
+                home
               </Link>
             </li>
 
@@ -35,13 +36,13 @@ const Navbar = () => {
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/recipebook">
-                    My Recipe Book
+                    my recipe book
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link className="nav-link" to="/preferences">
-                    Preferences
+                    preferences
                   </Link>
                 </li>
               </>
@@ -56,20 +57,20 @@ const Navbar = () => {
                     window.location.reload();
                   }}
                 >
-                  Log Out
+                  log out
                 </button>
               </li>
             ) : (
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/login">
-                    Log In
+                    log in
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link className="nav-link" to="/signup">
-                    Sign Up
+                    sign up
                   </Link>
                 </li>
               </>
