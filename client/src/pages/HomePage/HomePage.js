@@ -35,14 +35,14 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Welcome to Recipedia!</h1>
+      <h1 className={homeStyle.font}>welcome to recipedia!</h1>
 
       <section className={homeStyle.homeSection}>
-        <h2>Search Recipes</h2>
+        <h2 className={`text-left ${homeStyle.font}`} >search recipes</h2>
         <form onSubmit={handleSubmit(searchRecipes)}>
           <input
-            className="form-control"
-            placeholder="What's cooking?"
+            className={`form-control ${homeStyle.searchBar}`}
+            placeholder="what's cooking?"
             {...register("query")}
             required
           />
@@ -50,7 +50,7 @@ const HomePage = () => {
       </section>
 
       <section className={homeStyle.homeSection}>
-        <h2>Featured Recipes</h2>
+        <h2 className={`text-left ${homeStyle.font}`}>featured recipes</h2>
         {recipesLoaded ? (
           <div className={recipeBrowserStyle.recipes}>
             {recipes.map((recipe) => (
