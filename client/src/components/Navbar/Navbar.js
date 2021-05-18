@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 import { isUserLoggedIn } from "../../util/auth";
 import "./Navbar.css";
-import logo from './logo.png'
+import logo from '../../../src/logo.png'
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container d-flex">
         <Link className="navbar-brand" to="/">
-          <img src={logo} alt="recipedia logo" />
+          <img src={logo} alt="recipedia logo" width="175px" />
         </Link>
 
         <button

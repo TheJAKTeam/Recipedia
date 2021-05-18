@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import style from "../../commonStyles/Form.module.css";
+import commonStyle from "../../commonStyles/RecipeBrowser.module.css"
+import loginStyle from './LogIn.module.css';
+import logo from '../../../src/logo.png'
 
 const LogIn = () => {
   const history = useHistory();
@@ -49,47 +52,107 @@ const LogIn = () => {
   };
 
   return (
-    <div>
-      <h1>Log In</h1>
-      <form
-        className={style.authForm}
-        onSubmit={handleSubmit(sendLogInRequest)}
-      >
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            className="form-control"
-            type="email"
-            id="email"
-            {...register("email")}
-            disabled={submitting}
-            required
-          />
-        </div>
+    /*
+    <div className="row">
+      <div className="col-6">
+        <h1 className={commonStyle.font}>log in</h1>
+        <form
+          className={style.authForm}
+          onSubmit={handleSubmit(sendLogInRequest)}
+        >
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              className="form-control"
+              type="email"
+              id="email"
+              {...register("email")}
+              disabled={submitting}
+              required
+            />
+          </div>
 
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            className="form-control"
-            type="password"
-            id="password"
-            {...register("password")}
-            disabled={submitting}
-            required
-          />
-        </div>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              className="form-control"
+              type="password"
+              id="password"
+              {...register("password")}
+              disabled={submitting}
+              required
+            />
+          </div>
 
-        <div className={style.submitButtonContainer}>
-          <button
-            className="btn btn-primary"
-            type="submit"
-            disabled={submitting}
-          >
-            Log In
-          </button>
-        </div>
-      </form>
+          <div className={style.submitButtonContainer}>
+            <button
+              className="btn btn-primary"
+              type="submit"
+              disabled={submitting}
+            >
+              Log In
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  */
+  <div className="row d-flex align-items-center justify-content-center">
+    <div className={`col`}>
+        <h1 className={commonStyle.font}>sign in</h1>
+        <form
+          className={style.authForm}
+          onSubmit={handleSubmit(sendLogInRequest)}
+        >
+          <div>
+            <label htmlFor="email">email</label>
+            <input
+              className="form-control"
+              type="email"
+              id="email"
+              {...register("email")}
+              disabled={submitting}
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="password">password</label>
+            <input
+              className="form-control"
+              type="password"
+              id="password"
+              {...register("password")}
+              disabled={submitting}
+              required
+            />
+          </div>
+
+          <div className={style.submitButtonContainer}>
+            <button
+              type="submit"
+              disabled={submitting}
+            >
+              sign in
+            </button>
+          </div>
+        </form>
+    </div>
+
+    <div className={`col-6 ${loginStyle.info}`}>
+      <div className="row">
+        <div className={`${loginStyle.content} ${loginStyle.alignBothWays} col`}>
+          <Link to="/">
+            <img src={logo} alt="recipedia logo" width="400px" />
+          </Link>
+          <div>
+            <h2 className={`${commonStyle.font} text-left`}>recipes catered to your needs.</h2>
+            <p className="text-left">Don't have an account? Sign up <Link to="/signup">here</Link>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   );
 };
 

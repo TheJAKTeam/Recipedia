@@ -4,3 +4,24 @@
   flex-wrap: wrap;
   text-align: center;
 }
+
+.font {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  border: none;
+  width: 200px;
+  padding: 10px;
+  margin: 20px 0;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: grey;
+}
+

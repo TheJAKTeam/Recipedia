@@ -6,16 +6,20 @@ import Routes from "./routes";
 import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
+  const location = window.location.pathname;
+  const style = {
+    width: "100%",
+    maxWidth: "100%"
+  }
   return (
     <Router>
       <header>
-        <Navbar />
+          <Navbar />
       </header>
-
       <main>
         <div className="container">
           <Routes />
-        </div>
+        </div> 
       </main>
 
       <ToastContainer />
