@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 
 import preferenceStyle from './Preferences.module.css'
 import formStyle from '../../commonStyles/Form.module.css'
+import commonStyle from '../../commonStyles/RecipeBrowser.module.css'
 
 const dietOptions = [
   { value: 'balanced', label: 'Balanced' },
@@ -89,7 +90,7 @@ const Preferences = () => {
 
   return (
     <div>
-      <h1>Search Preferences</h1>
+      <h1 className={commonStyle.font}>search preferences</h1>
       <p className={preferenceStyle.description}>
         Set your search preferences here to filter out returned recipes and get
         results tailored to your dietary restrictions and needs. Be careful not
@@ -99,7 +100,7 @@ const Preferences = () => {
 
       <PreferenceSection
         type='diet'
-        label='Diet'
+        label='diet'
         options={dietOptions}
         form={dietForm}
         disabled={preferencesLoading}
@@ -107,7 +108,7 @@ const Preferences = () => {
 
       <PreferenceSection
         type='health'
-        label='Health'
+        label='health'
         options={healthOptions}
         form={healthForm}
         disabled={preferencesLoading}
@@ -115,7 +116,7 @@ const Preferences = () => {
 
       <PreferenceSection
         type='mealType'
-        label='Meal Type'
+        label='meal type'
         options={mealTypeOptions}
         form={mealTypeForm}
         disabled={preferencesLoading}
@@ -192,13 +193,12 @@ const PreferenceSection = props => {
 
         <div className={formStyle.submitButtonContainer}>
           <button
-            className='btn btn-primary'
             type='submit'
             disabled={disabled || saving}
           >
             {saving
-              ? `Saving ${label} Preferences...`
-              : `Save ${label} Preferences`}
+              ? `saving ${label} preferences...`
+              : `save ${label} preferences`}
           </button>
         </div>
       </form>

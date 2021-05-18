@@ -1,7 +1,7 @@
 .description {
   max-width: 600px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .preferenceSection {
@@ -19,5 +19,8 @@
 }
 
 .preferenceSection button {
+  font-size: 15px;
   margin-top: 0.75rem;
+  padding: 10px;
+  width: fit-content;
 }
