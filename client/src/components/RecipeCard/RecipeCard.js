@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-import { isUserLoggedIn } from "../../util/auth";
-import style from "./RecipeCard.module.css";
-import { toast } from "react-toastify";
+import { isUserLoggedIn } from '../../util/auth'
+import style from './RecipeCard.module.css'
+import { toast } from 'react-toastify'
 
 /**
  * A card with a brief representation of a recipe.
@@ -23,60 +23,60 @@ const RecipeCard = ({
   url,
   context,
   recipes,
-  setRecipes,
+  setRecipes
 }) => {
-  const saveRecipe = async (e) => {
-    e.preventDefault();
+  const saveRecipe = async e => {
+    e.preventDefault()
 
     try {
-      const encodedId = btoa(id);
+      const encodedId = btoa(id)
 
       await fetch(
         `${process.env.REACT_APP_BACKEND_DOMAIN}/api/recipes/${encodedId}/save`,
         {
-          method: "POST",
-          credentials: "include",
+          method: 'POST',
+          credentials: 'include'
         }
-      );
+      )
 
-      toast.success(`"${title}" has been saved to your recipe book.`);
+      toast.success(`"${title}" has been saved to your recipe book.`)
     } catch (err) {
       toast.error(
-        "An error occurred while saving this recipe. Please try again."
-      );
+        'An error occurred while saving this recipe. Please try again.'
+      )
     }
-  };
+  }
 
-  const unsaveRecipe = async (e) => {
-    e.preventDefault();
+  const unsaveRecipe = async e => {
+    e.preventDefault()
 
     try {
-      const encodedId = btoa(id);
+      const encodedId = btoa(id)
 
       await fetch(
         `${process.env.REACT_APP_BACKEND_DOMAIN}/api/recipes/${encodedId}/save`,
         {
-          method: "DELETE",
-          credentials: "include",
+          method: 'DELETE',
+          credentials: 'include'
         }
-      );
+      )
 
       // Remove recipe from array
-      setRecipes(recipes.filter((recipe) => recipe.uri !== id));
+      setRecipes(recipes.filter(recipe => recipe.uri !== id))
 
-      toast.success(`"${title}" has been removed from your recipe book.`);
+      toast.success(`"${title}" has been removed from your recipe book.`)
     } catch (err) {
       toast.error(
-        "An error occurred while removing this recipe from your recipe book. Please try again."
-      );
+        'An error occurred while removing this recipe from your recipe book. Please try again.'
+      )
     }
-  };
+  }
 
   return (
     <a
       href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      target='_blank'
+      rel='noopener noreferrer'
       className={style.recipeCard}
     >
       <article>
@@ -90,12 +90,12 @@ const RecipeCard = ({
 
           {isUserLoggedIn() && (
             <>
-              {context === "browser" ? (
-                <button className="btn btn-primary" onClick={saveRecipe}>
+              {context === 'browser' ? (
+                <button className='btn btn-primary' onClick={saveRecipe}>
                   Save Recipe
                 </button>
               ) : (
-                <button className="btn btn-danger" onClick={unsaveRecipe}>
+                <button className='btn btn-danger' onClick={unsaveRecipe}>
                   Unsave Recipe
                 </button>
               )}
@@ -104,7 +104,7 @@ const RecipeCard = ({
         </div>
       </article>
     </a>
-  );
-};
+  )
+}
 
-export default RecipeCard;
+export default RecipeCard

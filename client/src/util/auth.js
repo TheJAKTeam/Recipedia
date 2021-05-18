@@ -1,3 +1,3 @@
 export const isUserLoggedIn = () => {
-  return localStorage.getItem("isLoggedIn") === "true";
-};
+  return localStorage.getItem('isLoggedIn') === 'true'
+}
