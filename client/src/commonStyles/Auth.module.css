@@ -17,3 +17,17 @@
   max-width: 400px;
   margin-left: 10px;
 }
+
+.authButton {
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  width: 200px;
+  transition-duration: 0.4s;
+}
+
+.authButton:hover, .authButton:focus, .authButton:active {
+  background-color: gray;
+}

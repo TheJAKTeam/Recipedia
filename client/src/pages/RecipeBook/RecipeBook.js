@@ -56,7 +56,7 @@ const RecipeBook = () => {
 
   return (
     <div>
-      <h1>My Recipe Book</h1>
+      <h1 className={style.font}>my recipe book</h1>
 
       {recipesLoaded ? (
         <div className={style.recipes}>

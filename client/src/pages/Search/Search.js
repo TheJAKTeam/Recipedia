@@ -52,11 +52,11 @@ const Search = () => {
 
   return (
     <div>
-      <h1>Search Recipes</h1>
+      <h1 className={`text-left ${recipeBrowserStyle.font}`}>search recipes</h1>
       <form onSubmit={handleSubmit(submitSearch)}>
         <input
-          className={'form-control'}
-          placeholder="What's cooking?"
+          className={`form-control ${recipeBrowserStyle.searchBar}`}
+          placeholder="what's cooking?"
           {...register('query')}
           required
         />

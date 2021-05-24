@@ -193,6 +193,7 @@ const PreferenceSection = props => {
 
         <div className={formStyle.submitButtonContainer}>
           <button
+            className='btn btn-primary'
             type='submit'
             disabled={disabled || saving}
           >

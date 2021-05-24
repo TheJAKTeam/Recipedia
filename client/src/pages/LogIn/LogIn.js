@@ -84,7 +84,7 @@ const LogIn = () => {
           </div>
 
           <div className={style.submitButtonContainer}>
-            <button type='submit' disabled={submitting}>
+            <button className={`btn btn-primary ${loginStyle.authButton}`} type='submit' disabled={submitting}>
               sign in
             </button>
           </div>
