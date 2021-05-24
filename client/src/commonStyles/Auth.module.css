@@ -26,6 +26,7 @@
   font-size: 18px;
   width: 200px;
   transition-duration: 0.4s;
+  margin-top: 15px;
 }
 
 .authButton:hover, .authButton:focus, .authButton:active {
