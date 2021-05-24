@@ -91,15 +91,14 @@ const RecipeCard = ({
           {isUserLoggedIn() && (
             <>
               {context === 'browser' ? (
-                <button 
+                <button
                   className={`btn btn-primary ${style.btnCustom}`}
-                  onClick={saveRecipe}>
+                  onClick={saveRecipe}
+                >
                   save recipe
                 </button>
               ) : (
-                <button 
-                  className='btn btn-danger'
-                  onClick={unsaveRecipe}>
+                <button className='btn btn-danger' onClick={unsaveRecipe}>
                   unsave recipe
                 </button>
               )}

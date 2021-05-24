@@ -126,7 +126,11 @@ const SignUp = () => {
           </div>
 
           <div className={style.submitButtonContainer}>
-            <button className={`btn btn-primary ${signupStyle.authButton}`} type='submit' disabled={submitting}>
+            <button
+              className={`btn btn-primary ${signupStyle.authButton}`}
+              type='submit'
+              disabled={submitting}
+            >
               sign up
             </button>
           </div>

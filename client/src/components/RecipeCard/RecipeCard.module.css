@@ -34,9 +34,11 @@ button {
   transition-duration: 0.4s;
 }
 
-.btnCustom:active, .btnCustom:focus, .btnCustom:hover {
+.btnCustom:active,
+.btnCustom:focus,
+.btnCustom:hover {
   background-color: gray;
-} 
+}
 
 @media screen and (min-width: 768px) {
   .recipeCard {

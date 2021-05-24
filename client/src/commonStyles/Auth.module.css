@@ -29,6 +29,8 @@
   margin-top: 15px;
 }
 
-.authButton:hover, .authButton:focus, .authButton:active {
+.authButton:hover,
+.authButton:focus,
+.authButton:active {
   background-color: gray;
 }

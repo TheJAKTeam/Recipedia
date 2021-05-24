@@ -27,7 +27,10 @@
   border: none;
 }
 
-.preferenceSection button:not(.disabled):active, .preferenceSection button:active, .preferenceSection button:hover, .preferenceSection button:focus {
+.preferenceSection button:not(.disabled):active,
+.preferenceSection button:active,
+.preferenceSection button:hover,
+.preferenceSection button:focus {
   background-color: gray;
 }
 

@@ -56,7 +56,7 @@ const Navbar = () => {
                     localStorage.setItem('isLoggedIn', 'false')
                     window.location.reload()
                   }}
-                  width="100px"
+                  width='100px'
                 >
                   sign out
                 </button>
