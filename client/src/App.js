@@ -1,9 +1,9 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
-import Routes from "./routes";
-import Navbar from "./components/Navbar/Navbar";
+import Routes from './routes'
+import Navbar from './components/Navbar/Navbar'
 
 const App = () => {
   return (
@@ -11,16 +11,15 @@ const App = () => {
       <header>
         <Navbar />
       </header>
-
       <main>
-        <div className="container">
+        <div className='container'>
           <Routes />
         </div>
       </main>
 
       <ToastContainer />
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App

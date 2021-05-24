@@ -23,6 +23,23 @@
   flex-basis: 25%;
 }
 
+button {
+  font-family: 'Josefin Sans', sans-serif;
+  transition-duration: 0.4s;
+}
+
+.btnCustom {
+  background-color: black;
+  border: none;
+  transition-duration: 0.4s;
+}
+
+.btnCustom:active,
+.btnCustom:focus,
+.btnCustom:hover {
+  background-color: gray;
+}
+
 @media screen and (min-width: 768px) {
   .recipeCard {
     max-width: 300px;

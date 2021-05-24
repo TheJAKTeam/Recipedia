@@ -4,3 +4,7 @@
   flex-wrap: wrap;
   text-align: center;
 }
+
+.font {
+  font-family: 'Josefin Sans', sans-serif;
+}
