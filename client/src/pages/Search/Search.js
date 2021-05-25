@@ -87,13 +87,13 @@ const Search = () => {
               onClick={() => setPage(page - 1)}
               disabled={page <= 1}
             >
-              Previous Page
+              previous page
             </button>
             <button
               className='btn btn-secondary'
               onClick={() => setPage(page + 1)}
             >
-              Next Page
+              next page
             </button>
           </div>
         </>
