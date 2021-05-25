@@ -25,12 +25,12 @@
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
   width: 200px;
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
   margin-top: 15px;
 }
 
 .authButton:hover,
 .authButton:focus,
 .authButton:active {
-  background-color: gray;
+  background-color: #5cb85c;
 }
