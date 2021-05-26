@@ -56,7 +56,7 @@ const Search = () => {
       <form onSubmit={handleSubmit(submitSearch)}>
         <input
           className={`form-control ${searchStyle.searchBar}`}
-          placeholder="what's cooking?"
+          placeholder="What's cooking?"
           {...register('query')}
           required
         />
