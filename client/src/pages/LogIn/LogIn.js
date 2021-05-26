@@ -95,7 +95,7 @@ const LogIn = () => {
         </form>
       </div>
 
-      <div className={`col-6 ${loginStyle.info}`}>
+      <div className={`d-none d-sm-block col-6 ${loginStyle.info}`}>
         <div className='row'>
           <div
             className={`${loginStyle.content} ${loginStyle.alignBothWays} col`}

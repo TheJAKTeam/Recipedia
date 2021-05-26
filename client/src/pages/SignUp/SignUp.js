@@ -52,7 +52,7 @@ const SignUp = () => {
 
   return (
     <div className='row d-flex align-items-center justify-content-center'>
-      <div className={`col-6 ${signupStyle.info}`}>
+      <div className={`d-none d-sm-block col-md-6 ${signupStyle.info}`}>
         <div className='row'>
           <div
             className={`${signupStyle.content} ${signupStyle.alignBothWays} col`}
@@ -71,7 +71,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <div className={`col`}>
+      <div className={`col-xs-12 col-md-6`}>
         <h1 className={commonStyle.font}>sign up</h1>
         <form
           className={style.authForm}
