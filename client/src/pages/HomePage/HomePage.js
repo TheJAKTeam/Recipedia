@@ -42,7 +42,7 @@ const HomePage = () => {
         <form onSubmit={handleSubmit(searchRecipes)}>
           <input
             className={`form-control ${homeStyle.searchBar}`}
-            placeholder="what's cooking?"
+            placeholder="What's cooking?"
             {...register('query')}
             required
           />
